@@ -18,6 +18,22 @@ namespace FootballBetting.Data.Common
         //Country
         public const int CountryNameMaxLength = 60;
 
+        //Player
+        public const int PlayerNameMaxLength = 50;
+
+        //Position
+        public const int PositionNameMaxLength = 30;
+
+        //Game
+        public const int GameResultMaxLength = 10;
+
+        //User
+        public const int UserUsernameMaxLength = 50;
+        public const int UserPasswordMaxLength = 256;
+        public const int UserEmailMaxLength = 320;
+        public const int UserNameMaxLength = 740;
+
+
 
     }
 }
