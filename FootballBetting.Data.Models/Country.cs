@@ -10,5 +10,7 @@
         [Required]
         [MaxLength(GlobalConstants.CountryNameMaxLength)]
         public string Name { get; set; }
+
+
     }
 }
