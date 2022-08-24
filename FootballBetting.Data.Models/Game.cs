@@ -2,12 +2,21 @@
 namespace FootballBetting.Data.Models
 {
     using FootballBetting.Data.Common;
+
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public class Game
     {
+        public Game()
+        {
+            this.PlayerStatistics = new HashSet<PlayerStatistic>();
+
+            this.Bets = new HashSet<Bet>();
+        }
+
 
         [Key]
         public int GameId { get; set; }
@@ -30,5 +39,9 @@ namespace FootballBetting.Data.Models
 
         [MaxLength(GlobalConstants.GameResultMaxLength)] // __ : __
         public string Result { get; set; }
+
+        public virtual ICollection<PlayerStatistic> PlayerStatistics { get; set; }
+
+        public virtual ICollection<Bet> Bets { get; set; }
     }
 }

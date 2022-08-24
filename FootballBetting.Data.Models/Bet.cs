@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
 
     using System;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Bet
     {
@@ -13,7 +14,15 @@
         public Prediction Prediction { get; set; }
 
         public DateTime DateTime { get; set; }  //Required by default
+
+
+        [ForeignKey(nameof(User))]
         public int UserId { get; set; }
+        public virtual User User { get; set; }
+
+
+        [ForeignKey(nameof(Game))]
         public int GameId { get; set; }
+        public virtual Game Game { get; set; }
     }
 }
